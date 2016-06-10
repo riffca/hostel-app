@@ -5,10 +5,16 @@
 </template>
 
 <script>
+
+import hostelRoom from './hostel-room';
 export default {
-  props: ['room']
+  components:{hostelRoom},
+  props: ['rooms']
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="sass">
+
+
+
 </style>

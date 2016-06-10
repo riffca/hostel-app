@@ -1,9 +1,17 @@
 <template>
-	<hostel-rooms :room="{name: "rjvyff"}"></hostel-rooms>
+
+	<hostel-rooms :rooms="[
+    {'name': 'Спальня'},
+    {'name':'Готинная'},
+    {'name': 'Кухня'}
+  ]">
+  </hostel-rooms>
+  <router-view></router-view>
+
 </template>
 
 <script>
-import hostelRooms from './hostel-rooms'; 
+import hostelRooms from '../hostel-rooms'; 
 export default {
   components: {hostelRooms},
   data () {

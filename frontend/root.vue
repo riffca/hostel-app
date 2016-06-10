@@ -1,9 +1,9 @@
 <template>
 
 	<brand-part>
-		<a v-link="{name: 'contacts'}">Contacts</a>
-		<a v-link="{name: 'home'}">Home</a>
-		<a v-link="{name: 'rooms', params:{rooms: 'hi'}}">hi</a>
+		<a v-link="{name: 'home'}">Главная</a>
+		<a v-link="{name: 'contacts'}">Контакты</a>
+		<a v-link="{name: 'roomsIndex', params:{name: 'hi'}}">Привет</a>
 	</brand-part>
 	<router-view></router-view>
 </template>

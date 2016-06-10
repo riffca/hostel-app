@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="sass">
-	@import 'variables.scss';
+	@import 'scss/variables.scss';
 	#brand-part {
 		@include border();
 	}	

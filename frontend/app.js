@@ -1,31 +1,49 @@
+import './view/scss/style.scss';
+
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
-
 
 let router = new VueRouter({
     history: false
 });
+
 import rootComp from './root';
-
-
 let rootComponent = Vue.extend(rootComp);
 
-router.map({
+let componentPath = './view/router';
 
+router.map({
     '/': {
         name: 'home',
-        component: require('./view/router-home')
+        component: require(componentPath+'/home')
     },
     '/contacts': {
         name: 'contacts',
-        component: require('./view/router-contacts')
+        component: require(componentPath+'/contacts')
     },
 
-    '/:rooms': {
+    '/rooms': {
     	name: 'rooms',
-    	component: require('./view/router-rooms')
+    	component: require(componentPath+'/rooms'),
+        subRoutes:{
+            '/:name':{
+                name: 'roomsIndex',
+                component: {
+                    template: `
+                        <h1>{{ $route.params.name }}</h1>
+                    `
+                }
+            }
+        }
     }
 });
 router.start(rootComponent, '#application', () => {
     console.log('Роутер активен!');
+    fetch('/hi',{method: 'GET'}).then(res=>{
+
+        return res.text();
+
+    }).then(data=>{
+        console.log(data);
+    });
 });

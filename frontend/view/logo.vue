@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import 'variables';
+@import 'scss/variables';
 
 #logo {
 	@include border();
